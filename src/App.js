@@ -6,6 +6,15 @@ import {
 } from "material-react-table";
 import "./index.css";
 
+// didnt able to get the createdAt and updatedAt data and convert it into DD-MMM-YYYY HH:MM
+import moment from "moment";
+
+// const CustomDateTimeRenderer = ({ value }) => {
+//   const formattedDateTime = moment(value).format('DD-MMM-YYYY HH:mm');
+//   return <span>{formattedDateTime}</span>;
+// };
+
+// Dont know how to use custom css in this material react table and tanstack library .
 function App() {
   const columns = useMemo(() => [
     {
@@ -32,6 +41,7 @@ function App() {
       accessorKey: "createdAt",
       header: "createdAt",
       size: 150,
+      // Cell: ({ cell: { value } }) => <CustomDateTimeRenderer value={value} />,
     },
     {
       accessorKey: "updatedAt",
